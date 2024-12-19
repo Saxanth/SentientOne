@@ -1,21 +1,22 @@
 import pytest
 from providers import BaseProvider
-from providers.memorys.base_memory_provider import MemoryProvider
+from tests.test_utils import ConcreteProviderForTesting
+from providers.memory.base_memory_provider import BaseMemoryProvider
 
 def test_memory_provider_instantiation():
-    provider = MemoryProvider()
+    provider = ConcreteProviderForTesting.create(BaseMemoryProvider)
     assert isinstance(provider, BaseProvider)
     assert not provider.is_initialized()
 
 def test_memory_provider_configuration():
-    provider = MemoryProvider()
+    provider = ConcreteProviderForTesting.create(BaseMemoryProvider)
     test_config = {"test_key": "test_value"}
     provider.configure(test_config)
     assert provider.is_initialized()
     assert provider.get_config() == test_config
 
 def test_memory_provider_reset():
-    provider = MemoryProvider()
+    provider = ConcreteProviderForTesting.create(BaseMemoryProvider)
     test_config = {"test_key": "test_value"}
     provider.configure(test_config)
     provider.reset()

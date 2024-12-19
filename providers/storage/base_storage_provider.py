@@ -12,7 +12,7 @@ import os
 
 # Ensure the parent directories are in the Python path
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-from baseprovider import BaseProvider, ProviderMode
+from providers.baseprovider import BaseProvider, ProviderMode
 
 T = TypeVar('T')
 
@@ -214,3 +214,7 @@ class BaseStorageProvider(BaseProvider, Generic[T]):
             f"id={self.provider_id} "
             f"storage_type={self._config.storage_type.name}&gt;"
         )
+
+    def reset(self):
+        """Reset the provider to its initial state."""
+        super().reset()

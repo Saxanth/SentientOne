@@ -1,7 +1,12 @@
-from providers import BaseProvider
+import logging
+from providers.baseprovider import BaseProvider, ProviderMode
 from typing import Optional, Dict, Any
 
-class PersonaProvider(BaseProvider):
+class BasePersonaProvider(BaseProvider):
+    def __init__(self):
+        super().__init__()
+        self._logger = logging.getLogger(self.__class__.__name__)
+
     """Provider for managing contextual personality modeling."""
     
     def configure(self, config: Optional[Dict[str, Any]] = None) -> None:
@@ -9,7 +14,7 @@ class PersonaProvider(BaseProvider):
         super().configure(config)
     
     @classmethod
-    def create_persona(cls, config: Optional[Dict[str, Any]] = None) -> 'PersonaProvider':
+    def create_persona(cls, config: Optional[Dict[str, Any]] = None) -> 'BasePersonaProvider':
         """
         Create a new persona instance.
         
@@ -17,8 +22,12 @@ class PersonaProvider(BaseProvider):
             config (Optional[Dict[str, Any]]): Configuration for the persona.
             
         Returns:
-            PersonaProvider: A new configured persona instance.
+            BasePersonaProvider: A new configured persona instance.
         """
         persona = cls()
         persona.configure(config)
         return persona
+
+    def reset(self):
+        """Reset the provider to its initial state."""
+        super().reset()

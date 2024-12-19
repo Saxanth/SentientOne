@@ -12,7 +12,7 @@ import os
 
 # Ensure the parent directories are in the Python path
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-from baseprovider import BaseProvider, ProviderMode
+from providers.baseprovider import BaseProvider, ProviderMode
 from services.base_service_provider import ServiceEvent
 from storage.base_storage_provider import BaseStorageProvider, StorageConfig, StorageType
 
@@ -290,3 +290,7 @@ class BaseMemoryProvider(BaseProvider):
             f"id={self.provider_id} "
             f"storage_type={self._storage_provider._config.storage_type.name}&gt;"
         )
+
+    def reset(self):
+        """Reset the provider to its initial state."""
+        super().reset()

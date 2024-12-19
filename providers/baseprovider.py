@@ -46,6 +46,9 @@ class BaseProvider(abc.ABC):
         # Logging configuration
         self._logger = logging.getLogger(f"SentientOne.{self.name}")
         
+        # Initialization flag
+        self._is_initialized = False
+        
     @abc.abstractmethod
     def process(self, input_data: Any) -> Any:
         """
@@ -118,6 +121,47 @@ class BaseProvider(abc.ABC):
             'from_mode': previous_mode,
             'to_mode': new_mode
         })
+    
+    def configure(self, config: Optional[Dict[str, Any]] = None) -> None:
+        """
+        Configure the provider with specific settings.
+        
+        Args:
+            config: Optional configuration dictionary
+        """
+        if config is not None:
+            for key, value in config.items():
+                self.update_context(key, value)
+        
+        # Mark as initialized
+        self._is_initialized = True
+        
+    def reset(self) -> None:
+        """
+        Reset the provider to its initial state.
+        Clears context memory and interaction history.
+        """
+        self._context_memory.clear()
+        self._interaction_history.clear()
+        
+    def get_config(self) -> Dict[str, Any]:
+        """
+        Retrieve the current configuration of the provider.
+        
+        Returns:
+            Dictionary of configuration settings
+        """
+        return dict(self._context_memory)
+    
+    @property
+    def is_initialized(self) -> bool:
+        """
+        Check if the provider has been initialized or configured.
+        
+        Returns:
+            Boolean indicating initialization state
+        """
+        return len(self._context_memory) > 0 or len(self._interaction_history) > 0
     
     def __repr__(self) -> str:
         """

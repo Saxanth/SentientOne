@@ -13,9 +13,9 @@ import json
 
 # Ensure the parent directories are in the Python path
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-from baseprovider import BaseProvider, ProviderMode
+from providers.baseprovider import BaseProvider, ProviderMode
 from memory.base_memory_provider import BaseMemoryProvider, MemoryEntryType
-from agents.base_persona_provider import BasePersonaProvider
+from personas.base_persona_provider import BasePersonaProvider
 
 class CommunicationProtocol(Enum):
     """
@@ -49,7 +49,7 @@ class MessageStatus(Enum):
     PROCESSED = auto()
     FAILED = auto()
 
-@dataclass
+@dataclass(kw_only=True)
 class CommunicationIdentity:
     """
     Represents a unique communication identity.
@@ -63,7 +63,7 @@ class CommunicationIdentity:
     address: Optional[str] = None
     permissions: List[str] = field(default_factory=list)
 
-@dataclass
+@dataclass(kw_only=True)
 class Message:
     """
     Comprehensive message representation.
@@ -132,7 +132,7 @@ class Message:
             tags=data['tags']
         )
 
-class BaseCommuncationProvider(BaseProvider):
+class BaseCommunicationProvider(BaseProvider):
     """
     Comprehensive communication management provider.
     
@@ -390,3 +390,39 @@ class BaseCommuncationProvider(BaseProvider):
             self._communication_logger.info(
                 "Communication provider stopped"
             )
+
+    def reset(self):
+        """Reset the provider to its initial state."""
+        super().reset()
+        
+        # Reset specific communication provider state
+        self._identities.clear()
+        
+        # Reset initialization state explicitly
+        self._is_initialized = False
+
+    def process(self, input_data: Any) -> Any:
+        """
+        Core processing method for communication provider.
+        
+        Args:
+            input_data: Input data to process, typically a message or communication event
+        
+        Returns:
+            Processed communication result
+        """
+        if isinstance(input_data, Message):
+            # If a message is passed, attempt to send it
+            return self.send_message(
+                sender=input_data.sender, 
+                recipients=input_data.recipients, 
+                content=input_data.content,
+                protocol=input_data.protocol,
+                priority=input_data.priority,
+                context=input_data.context,
+                tags=input_data.tags
+            )
+        
+        # Generic processing for non-message inputs
+        self._communication_logger.warning(f"Unhandled input type for processing: {type(input_data)}")
+        return None

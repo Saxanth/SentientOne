@@ -14,7 +14,7 @@ import os
 
 # Ensure the parent directories are in the Python path
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-from baseprovider import BaseProvider, ProviderMode
+from providers.baseprovider import BaseProvider, ProviderMode
 from memory.base_memory_provider import BaseMemoryProvider, MemoryEntryType
 
 class PermissionLevel(Enum):
@@ -38,7 +38,7 @@ class AuthenticationMethod(Enum):
     CERTIFICATE = auto()
     BIOMETRIC = auto()
 
-@dataclass
+@dataclass(kw_only=True)
 class OrganizationUnit:
     """
     Represents an organizational unit with hierarchical structure.
@@ -55,7 +55,7 @@ class OrganizationUnit:
     # Nested organizational structure
     sub_units: List[str] = field(default_factory=list)
 
-@dataclass
+@dataclass(kw_only=True)
 class SecurityProfile:
     """
     Comprehensive security profile for users and entities.
@@ -86,7 +86,7 @@ class SecurityProfile:
     is_locked: bool = False
     requires_password_reset: bool = False
 
-@dataclass
+@dataclass(kw_only=True)
 class AccessToken:
     """
     Secure access token for authentication and authorization.
@@ -391,3 +391,7 @@ class BaseSecurityProvider(BaseProvider):
         )
         
         return True
+
+    def reset(self):
+        """Reset the provider to its initial state."""
+        super().reset()

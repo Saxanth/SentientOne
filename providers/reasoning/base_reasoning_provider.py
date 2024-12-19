@@ -13,9 +13,9 @@ import json
 
 # Ensure the parent directories are in the Python path
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-from baseprovider import BaseProvider, ProviderMode
+from providers.baseprovider import BaseProvider, ProviderMode
 from memory.base_memory_provider import BaseMemoryProvider, MemoryEntryType
-from agents.base_persona_provider import BasePersonaProvider
+from personas import BasePersonaProvider
 
 class ReasoningParadigm(Enum):
     """
@@ -30,27 +30,19 @@ class ReasoningParadigm(Enum):
     CASE_BASED = auto()       # Reasoning by precedent and similarity
     NEURAL_SYMBOLIC = auto()  # Hybrid neural and symbolic reasoning
 
-@dataclass
+@dataclass(kw_only=True)
 class ReasoningContext:
     """
     Comprehensive context for reasoning processes.
     Captures the environment and constraints of reasoning.
     """
     id: str = field(default_factory=lambda: str(uuid.uuid4()))
-    
-    # Contextual metadata
     timestamp: datetime = field(default_factory=datetime.now)
     paradigm: Optional[ReasoningParadigm] = None
-    
-    # Input data and constraints
     input_data: Dict[str, Any] = field(default_factory=dict)
     constraints: Dict[str, Any] = field(default_factory=dict)
-    
-    # Reasoning state tracking
     initial_state: Dict[str, Any] = field(default_factory=dict)
     intermediate_states: List[Dict[str, Any]] = field(default_factory=list)
-    
-    # Reasoning outcome
     conclusion: Optional[Any] = None
     confidence: float = 0.0
     
@@ -63,7 +55,7 @@ class ReasoningContext:
         """
         self.intermediate_states.append(state)
 
-@dataclass
+@dataclass(kw_only=True)
 class ReasoningStep:
     """
     Represents an individual step in a reasoning process.
@@ -317,3 +309,7 @@ class BaseReasoningProvider(BaseProvider):
         
         # Simple heuristic based on intermediate state diversity
         return min(1.0, len(context.intermediate_states) / 10)
+
+    def reset(self):
+        """Reset the provider to its initial state."""
+        super().reset()

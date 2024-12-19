@@ -12,9 +12,9 @@ import os
 
 # Ensure the parent directories are in the Python path
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-from baseprovider import BaseProvider, ProviderMode
+from providers.baseprovider import BaseProvider, ProviderMode
 from memory.base_memory_provider import BaseMemoryProvider, MemoryEntryType
-from agents.base_persona_provider import BasePersonaProvider
+from providers.personas.base_persona_provider import BasePersonaProvider
 
 class LearningParadigm(Enum):
     """Enumeration of learning paradigms."""
@@ -61,7 +61,7 @@ class Skill:
         self.last_used = datetime.now()
         self.usage_count += 1
 
-@dataclass
+@dataclass(kw_only=True)
 class LearningObjective:
     """
     Structured learning goal with comprehensive tracking.
@@ -336,3 +336,7 @@ class BaseLearningProvider(BaseProvider):
             if (category is None or skill.category == category)
             and skill.proficiency >= min_proficiency
         ]
+
+    def reset(self):
+        """Reset the provider to its initial state."""
+        super().reset()
