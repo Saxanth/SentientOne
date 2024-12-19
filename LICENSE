@@ -1,21 +1,108 @@
-MIT License
+# SentientOne Creators and Research Use License
 
-Copyright (c) 2024 Saxanth
+## Purpose
+This license governs the use of the SentientOne framework, providing a flexible yet controlled usage model for creators and researchers.
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+## Licensing Tiers
 
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
+### Tier 0: Personal and Research Use (Free)
+#### Permitted Use
+- Individual personal projects
+- Academic and non-commercial research
+- Experimental and learning purposes
+- Open-source project development
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
+#### Restrictions
+- Annual revenue/funding threshold: < $10,000
+- Maximum concurrent users: 10
+- No direct commercial application
+
+### Tier 1: Creator's License
+#### Permitted Use
+- Small-scale commercial exploration
+- Startup and early-stage product development
+- Individual creator and small team projects
+
+#### Thresholds Triggering Commercial License Requirement
+1. Annual Revenue Threshold
+   - If project/product generates > $50,000 annually
+   - Mandatory commercial licensing discussion
+
+2. User Scale Limitations
+   - Concurrent users exceed 50
+   - Total user base > 1,000 active users
+
+3. Computational Resource Consumption
+   - Aggregate computational time > 10,000 hours/year
+   - Cloud/infrastructure costs exceeding $5,000/year
+
+### Commercial Licensing Requirement
+
+#### Mandatory Contact Conditions
+Organizations or projects must initiate commercial licensing discussions if ALL of the following are met:
+- Annual revenue exceeds $50,000
+- Concurrent user count surpasses 50
+- Total user base exceeds 1,000
+- Computational resources usage above thresholds
+- Direct commercial product or service deployment
+
+#### Demonstration and Showcase Clarification
+The following activities are NOT considered commercial use:
+- Demonstrating project capabilities
+- Streaming project demonstrations
+- Creating educational content (YouTube, tutorials)
+- Community event presentations
+- Conference or academic showcases
+- Personal or educational project exhibitions
+
+Commercial use is strictly defined as direct deployment or selling of products/services using the framework.
+
+#### Licensing Inquiry Process
+1. Contact SentientOne Licensing Team
+   - Email: [EMAIL PLACEHOLDER]
+   - Provide detailed project information
+   - Discuss current usage and future intentions
+
+2. Collaborative Assessment
+   - Review of project scope
+   - Determination of appropriate licensing model
+   - Potential partnership or custom licensing
+
+### Special Provisions
+
+#### Research and Academic Exemptions
+- Academic institutions always exempt from commercial licensing
+- Research projects with no commercial intent remain free
+- Collaborative research opportunities encouraged
+
+#### Attribution and Contribution
+- Creators must maintain original copyright notices
+- Significant modifications must be documented
+- Contribution to core framework is highly appreciated
+
+## Ethical and Responsible Use
+
+### Usage Guidelines
+- Framework must not be used for:
+  * Harmful or malicious purposes
+  * Violations of human rights
+  * Unethical AI applications
+
+### Termination Clauses
+- License can be revoked for:
+  * Violation of usage terms
+  * Unethical application
+  * Failure to comply with licensing requirements
+
+## Contact and Collaboration
+
+### Licensing Inquiries
+- Email: [EMAIL PLACEHOLDER]
+- Web: [WEBSITE PLACEHOLDER]
+
+## Acceptance
+By using, copying, or distributing this software, you agree to these terms.
+
+---
+
+ 2024 SentientOne Research Team. All Rights Reserved.
