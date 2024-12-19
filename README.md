@@ -4,6 +4,8 @@
   <img src="docs/assets/logo.png" alt="SentientOne Logo" width="200"/>
   <br/>
   <strong>Building the Future of Adaptive Intelligence</strong>
+  <br/>
+  <em>A Project by Kirigen.co</em>
 </div>
 
 ## 🚧 Project Status: Early Development 🚧
@@ -75,8 +77,8 @@ Mandatory commercial licensing is required if ALL of these are met:
 Commercial use is strictly defined as direct deployment or selling of products/services using the framework.
 
 ### Licensing Inquiries
-- Email: licensing@sentientone.research
-- Web: https://sentientone.research
+- Email: licensing@kirigen.co
+- Web: https://sentient-ai.kirigen.co
 
 ## Installation
 
@@ -86,7 +88,7 @@ Commercial use is strictly defined as direct deployment or selling of products/s
 
 ### Quick Start
 ```bash
-git clone https://github.com/YourUsername/SentientOne.git
+git clone https://github.com/Saxanth/SentientOne.git
 cd SentientOne
 pip install -r requirements.txt
 ```
