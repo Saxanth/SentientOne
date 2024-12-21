@@ -2,132 +2,91 @@
 
 ## Overview
 
-SentientOne implements a modular, provider-based architecture designed to create sophisticated adaptive intelligence systems. Our architecture emphasizes flexibility, extensibility, and robust integration capabilities.
+SentientOne provides templates for building agent-based systems with different levels of complexity:
 
-## Core Design Principles
+### Basic Agency Template
+- Core structure for simple agent systems
+- Essential task management
+- Basic configuration
+- Minimal dependencies
 
-### 🔄 Modularity
-- Independent provider components
-- Clear interface boundaries
-- Plug-and-play functionality
+### Advanced Agency Template
+- Full organizational structure
+- Executive management layer
+- Specialized agent roles
+- Advanced task orchestration
 
-### 🎯 Context-Awareness
-- Rich contextual modeling
-- Adaptive behavior systems
-- Environmental awareness
+## Template Components
 
-### 🧠 Intelligent Adaptation
-- Dynamic resource allocation
-- Learning-based optimization
-- Predictive capabilities
+### Core Components (Both Templates)
+- Base agent implementation
+- Task management system
+- Configuration validation
+- Simple messaging
 
-### 🛡️ Enterprise Integration
-- Secure communication channels
-- Robust error handling
-- Scalable architecture
-
-## Provider Architecture
-
-### Core Providers
-
-#### 1. Agent Provider
-- Intelligent agent lifecycle management
-- Goal-driven behavior modeling
-- Multi-agent coordination
-
-#### 2. Communication Provider
-- Inter-system message routing
-- Protocol adaptation
-- Context-aware delivery
-
-#### 3. Learning Provider
-- Skill acquisition frameworks
-- Knowledge transfer systems
-- Adaptive learning mechanisms
-
-#### 4. Memory Provider
-- Semantic storage systems
-- Contextual retrieval
-- Memory optimization
-
-#### 5. Persona Provider
-- Personality modeling
-- Emotional intelligence
-- Behavioral adaptation
-
-#### 6. Reasoning Provider
-- Cognitive processing
-- Logic systems
-- Decision frameworks
-
-#### 7. Security Provider
-- Access control
-- Organization management
-- Compliance frameworks
-
-#### 8. Service Provider
-- Service orchestration
-- Resource management
-- System coordination
-
-#### 9. Storage Provider
-- Data management
-- Persistence strategies
-- Cache optimization
-
-#### 10. Tool Provider
-- Dynamic tool registration
-- Capability management
+### Advanced Components (Advanced Template)
+- Executive team management
+- Sentient Resources (SR)
+- Department organization
+- Performance monitoring
 - Resource allocation
 
-#### 11. Workflow Provider
-- Process automation
-- Task orchestration
-- Flow optimization
+## Task Management
 
-## Integration Model
+Tasks follow a simple lifecycle:
+- PENDING: Task created
+- ACTIVE: Under processing
+- COMPLETED: Successfully finished
+- FAILED: Error occurred
 
-### Provider Communication
-- Event-driven architecture
-- Asynchronous messaging
-- Context propagation
+Priority levels:
+- LOW: Background tasks
+- MEDIUM: Standard operations
+- HIGH: Important tasks
+- CRITICAL: Urgent requirements
 
-### State Management
-- Distributed state tracking
-- Consistency protocols
-- Recovery mechanisms
+## Configuration Management
 
-### Resource Optimization
-- Dynamic scaling
-- Load balancing
-- Performance monitoring
+Each template provides:
+- Default configuration
+- Validation rules
+- Extension points
+- Documentation
+
+## Best Practices
+
+1. Keep tasks focused and atomic
+2. Use appropriate template for your needs
+3. Follow configuration guidelines
+4. Implement proper error handling
+5. Monitor agent performance
+
+## Extension Points
+
+Templates can be extended through:
+1. New specialized agents
+2. Custom departments
+3. Additional task types
+4. Enhanced monitoring
+
+## Security Considerations
+
+1. Task isolation
+2. Agent permissions
+3. Resource limits
+4. Input validation
+
+## Performance
+
+Optimization areas:
+1. Task scheduling
+2. Resource allocation
+3. Memory management
+4. Communication patterns
 
 ## Future Directions
 
-### Planned Enhancements
-- Advanced cognitive modeling
-- Distributed intelligence
-- Quantum computing integration
-- Neural architecture scaling
-
-### Research Focus
-- Complex adaptive systems
-- Emergent intelligence
-- Cross-domain learning
-- Cognitive architecture optimization
-
-## Technical Stack
-
-### Core Technologies
-- Python 3.9+
-- Async I/O
-- Type Safety
-- Modern Design Patterns
-
-### Quality Assurance
-- Comprehensive Testing
-- Performance Monitoring
-- Security Validation
-
-## Getting Started
-For implementation details and examples, see our [documentation](docs/README.md).
+1. Additional templates
+2. Enhanced monitoring
+3. Advanced orchestration
+4. Improved scalability

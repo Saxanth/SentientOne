@@ -1,56 +1,35 @@
 # Contributing to SentientOne
 
-Thank you for your interest in contributing to SentientOne! We're excited to welcome you to our community of researchers and developers working on advanced adaptive intelligence systems.
+Thank you for your interest in contributing to SentientOne! This document provides guidelines and information for contributors.
 
-## Code of Conduct
+## Getting Started
 
-Please read our [Code of Conduct](CODE_OF_CONDUCT.md) before contributing. We are committed to providing a welcoming and inspiring community for all.
+1. Fork the repository
+2. Clone your fork
+3. Create a feature branch
+4. Make your changes
+5. Submit a pull request
 
-## How to Contribute
+## Project Structure
 
-### 1. Setting Up Your Development Environment
-
-```bash
-# Clone the repository
-git clone https://github.com/YourUsername/SentientOne.git
-cd SentientOne
-
-# Create a virtual environment
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-
-# Install dependencies
-pip install -r requirements.txt
+```
+sentientone/
+├── templates/       # Agency templates
+│   ├── basic_agency/    # Basic agent system template
+│   └── advanced-agency/ # Full-featured system template
+├── docs/           # Documentation
+├── tests/          # Test suite
+└── README.md       # Project documentation
 ```
 
-### 2. Making Changes
-
-1. Create a new branch:
-   ```bash
-   git checkout -b feature/your-feature-name
-   ```
-
-2. Make your changes
-3. Write or update tests
-4. Run the test suite:
-   ```bash
-   pytest
-   ```
-
-5. Update documentation as needed
-
-### 3. Submitting Changes
-
-1. Push your changes:
-   ```bash
-   git push origin feature/your-feature-name
-   ```
-
-2. Create a Pull Request
-3. Fill out the PR template
-4. Wait for review
-
 ## Development Guidelines
+
+### Template Development
+When modifying templates:
+- Keep changes consistent across both templates
+- Update template-specific documentation
+- Follow existing patterns
+- Test with example implementations
 
 ### Code Style
 - Follow PEP 8
@@ -59,35 +38,35 @@ pip install -r requirements.txt
 - Keep functions focused and modular
 
 ### Testing
-- Write unit tests for new features
+- Write unit tests for template components
 - Ensure all tests pass
 - Maintain test coverage
+- Test template configurations
 
 ### Documentation
-- Update relevant documentation
+- Update template READMEs
 - Include docstrings
 - Add comments for complex logic
+- Keep main documentation in sync
 
-## Provider Development
+## Template Guidelines
 
-When developing new providers:
-1. Follow the provider protocol
-2. Implement required interfaces
-3. Include comprehensive tests
-4. Document provider capabilities
+### Basic Agency Template
+- Keep it minimal
+- Focus on core functionality
+- Clear documentation
+- Simple configuration
 
-## Research Contributions
-
-We welcome research-focused contributions:
-- Novel algorithms
-- Architecture improvements
-- Performance optimizations
-- Theoretical foundations
+### Advanced Agency Template
+- Build on basic template
+- Add advanced features
+- Maintain compatibility
+- Comprehensive documentation
 
 ## Questions or Need Help?
 
 - Open an issue for bugs
-- Join our research community
+- Join our community
 - Check our documentation
 
 Thank you for contributing to the future of adaptive intelligence!

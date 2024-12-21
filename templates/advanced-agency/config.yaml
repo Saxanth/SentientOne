@@ -1,0 +1,117 @@
+agency:
+  # Department configurations
+  departments:
+    sr:
+      evaluation_threshold: 0.9
+      performance_window: 20
+      max_concurrent_tasks: 10
+      code_review_required: true
+      resource_utilization_threshold: 0.8
+      metrics_update_interval: 300
+      alert_threshold: 0.7
+
+    engineering:
+      evaluation_threshold: 0.8
+      performance_window: 15
+      max_concurrent_tasks: 8
+      code_review_required: true
+      resource_utilization_threshold: 0.8
+      metrics_update_interval: 300
+      alert_threshold: 0.7
+
+    operations:
+      evaluation_threshold: 0.85
+      performance_window: 12
+      max_concurrent_tasks: 6
+      code_review_required: false
+      resource_utilization_threshold: 0.8
+      metrics_update_interval: 300
+      alert_threshold: 0.7
+
+    analytics:
+      evaluation_threshold: 0.85
+      performance_window: 15
+      max_concurrent_tasks: 5
+      code_review_required: true
+      resource_utilization_threshold: 0.8
+      metrics_update_interval: 300
+      alert_threshold: 0.7
+
+  # Agent configurations
+  agents:
+    base:
+      task_timeout: 300
+      max_retries: 3
+      memory_limit: 512
+      min_research_depth: 3
+      citation_required: true
+      code_style: "pep8"
+      test_coverage_min: 0.8
+      coverage_threshold: 0.9
+      edge_cases_required: 5
+
+    specialized:
+      developer:
+        task_timeout: 600
+        max_retries: 5
+        memory_limit: 1024
+        code_style: "pep8"
+        test_coverage_min: 0.9
+        coverage_threshold: 0.95
+        edge_cases_required: 8
+
+      researcher:
+        task_timeout: 900
+        max_retries: 4
+        memory_limit: 768
+        min_research_depth: 5
+        citation_required: true
+
+      tester:
+        task_timeout: 450
+        max_retries: 5
+        memory_limit: 512
+        test_coverage_min: 0.95
+        edge_cases_required: 10
+
+  # Task orchestration
+  orchestration:
+    max_workers: 10
+    pipeline_timeout: 1200
+    retry_delay: 5
+    queue_size: 200
+
+  # Metrics collection
+  metrics:
+    collection_interval: 30
+    retention_period: 2592000  # 30 days
+    aggregation_window: 3600   # 1 hour
+    storage_path: "metrics/"
+
+  # Logging configuration
+  logging:
+    level: "INFO"
+    file_path: "logs/agency.log"
+    rotation: "1 day"
+    retention: "30 days"
+
+  # Security settings
+  security:
+    task_validation: true
+    agent_isolation: true
+    permission_checks: true
+
+  # Executive settings
+  executive:
+    project_priority_levels: ["low", "medium", "high", "critical"]
+    resource_allocation_threshold: 0.8
+    performance_review_interval: 604800  # 7 days
+    department_sync_interval: 3600       # 1 hour
+
+  # SR settings
+  sr:
+    recruitment_threshold: 0.85
+    performance_review_window: 90        # days
+    capability_update_interval: 604800   # 7 days
+    role_rotation_enabled: true
+    role_rotation_interval: 7776000      # 90 days

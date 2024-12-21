@@ -1,0 +1,60 @@
+agency:
+  # Department configurations
+  departments:
+    research:
+      evaluation_threshold: 0.8
+      performance_window: 10
+      max_concurrent_tasks: 3
+      code_review_required: false
+      resource_utilization_threshold: 0.8
+      metrics_update_interval: 300
+      alert_threshold: 0.7
+
+    development:
+      evaluation_threshold: 0.8
+      performance_window: 10
+      max_concurrent_tasks: 5
+      code_review_required: true
+      resource_utilization_threshold: 0.8
+      metrics_update_interval: 300
+      alert_threshold: 0.7
+
+  # Agent configurations
+  agents:
+    base:
+      task_timeout: 300
+      max_retries: 3
+      memory_limit: 512
+      min_research_depth: 2
+      citation_required: false
+      code_style: "pep8"
+      test_coverage_min: 0.7
+      coverage_threshold: 0.8
+      edge_cases_required: 3
+
+  # Task orchestration
+  orchestration:
+    max_workers: 5
+    pipeline_timeout: 600
+    retry_delay: 5
+    queue_size: 100
+
+  # Metrics collection
+  metrics:
+    collection_interval: 60
+    retention_period: 604800  # 7 days
+    aggregation_window: 3600  # 1 hour
+    storage_path: "metrics/"
+
+  # Logging configuration
+  logging:
+    level: "INFO"
+    file_path: "logs/agency.log"
+    rotation: "1 day"
+    retention: "30 days"
+
+  # Security settings
+  security:
+    task_validation: true
+    agent_isolation: true
+    permission_checks: true
