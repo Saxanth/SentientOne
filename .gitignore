@@ -9,6 +9,7 @@ venv/
 env/
 .env/
 .venv/
+cli-tools/
 
 # Distribution / packaging
 .Python

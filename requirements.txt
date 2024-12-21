@@ -5,6 +5,7 @@ dataclasses>=0.6
 # Optional dependencies for advanced features
 numpy>=1.21.0
 pydantic>=1.8.2
+aiohttp>=3.8.0
 
 # Development and testing
 pytest>=6.2.5
